@@ -1,0 +1,10 @@
+function lofScore = lof_kd_tree(k,dataSet)
+    n = size(dataSet,1);
+    lofScore = zeros(1,n);
+    Nk = cell(n, 1);
+    dk = zeros(1, n);
+
+    tree = KDTreeSearcher(dataSet);
+    [idxes,distances] = knnsearch(tree, dataSet, 'K', k+1);
+    
+end

@@ -1,0 +1,10 @@
+function dk = knn_outlier(k,dataSet,number_outliers,dist_k_neighbors)
+    n = size(dataSet,1);
+    dk = zeros(1,n);
+    outliers = zeros(1,number_outliers);
+   
+    for i = 1:n
+      dk(i) = dist_k_neighbors(i,k);
+    end  
+    [~, indexKNN] = sort(knn_points,"desc");
+end
